@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_hr_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='mobile_phone']" position="after">
+                    <field name="passport_data"/>
+                    <field name="snils"/>
+                    <field name="inn"/>
+                    <field name="citizenship"/>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button string="Import from 1C" name="import_data" type="object" class="btn-primary"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>
